@@ -51,3 +51,13 @@ console.log('dw: ', _.dropWhile([1, 2, 3], function(n) {
     return n < 3;
 }));//[3]
 
+/**
+ * fill
+ * 1 array
+ * 2 value,
+ * 3 start
+ * 4 end结束为止，不包含
+ */
+_.fill([1, 2, 3], 'a');//['a', 'a', 'a']
+_.fill(Array(3), 'a');
+console.log(_.fill([4, 6, 8], '*', 1, 2));//[4, '*', 8]
