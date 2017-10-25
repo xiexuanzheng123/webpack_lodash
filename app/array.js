@@ -61,3 +61,16 @@ console.log('dw: ', _.dropWhile([1, 2, 3], function(n) {
 _.fill([1, 2, 3], 'a');//['a', 'a', 'a']
 _.fill(Array(3), 'a');
 console.log(_.fill([4, 6, 8], '*', 1, 2));//[4, '*', 8]
+
+/**
+ * findIndex
+ * 返回符合条件的第一元素的索引
+ */
+console.log('findIndex: ', _.findIndex(users, function(chr) {
+    return chr.user === 'barney';
+}));
+
+/**
+ * head返回数组的第一个元素
+ */
+console.log(_.first([1, 2, 3]));
