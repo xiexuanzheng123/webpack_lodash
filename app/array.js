@@ -22,3 +22,24 @@ console.log(_.difference(diffArr, [4, 2]));
 let dropArr = [1, 2, 3];
 console.log('drop1: ', _.drop(dropArr, 1));//如果长度是1，则可以省略
 console.log('drop0: ', _.drop(dropArr, 0));
+
+/**
+ * dropRight去掉数组中尾部的元素
+ */
+let dropRightArr = [1, 2, 3];
+console.log('dropRight: ', _.dropRight(dropRightArr, 1));
+
+/**
+ * dropRightWhile从右端开始查询 ，
+ */
+console.log('drw: ', _.dropRightWhile([1, 1, 2, 3, 0], function(n) {
+    return n > 1;
+}));//[1]
+var users = [
+    {'user': 'barney', 'active': true},
+    {'user': 'fred', 'active': false},
+    {'user': 'pebbles', 'active': true}
+];
+// _.pluck(_.dropRightWhile(users, { 'user': 'pebbles', 'active': false }), 'user');//['barney', 'fred']
+// _.pluck(_.dropRightWhile(users, 'active', false), 'user');//['barney']
+// _.pluck(_.dropRightWhile(users, 'active'), 'user');//['barney','fred']
