@@ -30,11 +30,11 @@ let dropRightArr = [1, 2, 3];
 console.log('dropRight: ', _.dropRight(dropRightArr, 1));
 
 /**
- * dropRightWhile从右端开始查询 ，
+ * dropRightWhile从右端开始查询 ，第一个不满足predicate 条件的元素开始截取数组.
  */
 console.log('drw: ', _.dropRightWhile([1, 1, 2, 3, 0], function(n) {
     return n > 1;
-}));//[1]
+}));//[1, 1, 2, 3, 0]
 var users = [
     {'user': 'barney', 'active': true},
     {'user': 'fred', 'active': false},
@@ -42,4 +42,12 @@ var users = [
 ];
 // _.pluck(_.dropRightWhile(users, { 'user': 'pebbles', 'active': false }), 'user');//['barney', 'fred']
 // _.pluck(_.dropRightWhile(users, 'active', false), 'user');//['barney']
-// _.pluck(_.dropRightWhile(users, 'active'), 'user');//['barney','fred']
+// _.pluck(_.dropRightWhile(users, 'active'), 'user');//['barney','fred', 'pebbles']
+
+/**
+ * dropWhile
+ */
+console.log('dw: ', _.dropWhile([1, 2, 3], function(n) {
+    return n < 3;
+}));//[3]
+
