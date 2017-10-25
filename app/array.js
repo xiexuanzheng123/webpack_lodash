@@ -9,3 +9,9 @@ console.log(_.chunk(chunkArr, 3));//[['a', 'b', 'c'], ['d']]
 */
 let  compactArr = [0, 1, false, 2, '', 3];
 console.log(_.compact(compactArr));
+
+/**
+ * difference过滤数组
+ */
+let diffArr = [1, 2, 3];
+console.log(_.difference(diffArr, [4, 2]));
