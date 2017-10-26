@@ -71,3 +71,25 @@ console.log(_.xorBy([2.1, 1.2], [2.3, 3.4], Math.floor));//[1.2, 3.4]
 var objects = [{'x': 1, 'y': 2}, {'x': 2, 'y': 1}];
 var others = [{'x': 1, 'y': 1}, {'x': 1, 'y': 2}];
 console.log(_.xorWith(objects, others, _.isEqual));
+
+/**
+ * zip
+ */
+console.log(_.zip(['a', 'b'], [1, 2], [true, false]));
+
+/**
+ * zipObject
+ */
+console.log(_.zipObject(['a', 'b'], [1, 2]));//{'a': 1, 'b': 2}
+
+/**
+ * zipObjectDeep
+ */
+console.log(_.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]));//{'a': {'b': [{'c': 1}, {'d': 2}]}}
+
+/**
+ * zipWith
+ */
+console.log(_.zipWith([1, 2], [10, 20], [100, 200], function(a, b, c) {
+    return a + b + c;
+}));//[111, 222]
