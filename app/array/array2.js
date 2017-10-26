@@ -57,6 +57,45 @@ console.log(_.sortedUniq([1, 1, 2, 2]));
 console.log(_.sortedUniqBy([1.1, 1.2, 2.1, 2.2], Math.floor));
 
 /**
- * tail去掉首字母
+ * tail去掉首元素
  */
 console.log(_.tail([1, 2, 3]));
+
+/**
+ * take获取前N个元素
+ */
+console.log(_.take([1, 2, 3, 4], 3));
+
+/**
+ * takeRight获取后面N个元素
+ */
+console.log(_.takeRight([1, 2, 3, 4], 3));
+
+/**
+ * takeRightWhile
+ */
+var users = [
+    { 'user': 'barney',  'active': true },
+  
+    { 'user': 'fred',    'active': false },
+  
+    { 'user': 'pebbles', 'active': false }
+  ];
+console.log(_.takeRightWhile(users, function(o) {
+    return !o.active;
+}));
+console.log(_.takeRightWhile(users, {'user': 'pebbles', 'active': false}));
+
+/**
+ * takeWhile
+ */
+var users = [
+    { 'user': 'barney',  'active': false },
+  
+    { 'user': 'fred',    'active': false },
+  
+    { 'user': 'pebbles', 'active': true }
+  ];
+console.log(_.takeWhile(users, function(o) {
+    return !o.active;
+}));
