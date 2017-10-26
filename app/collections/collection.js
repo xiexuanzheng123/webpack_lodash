@@ -57,3 +57,60 @@ console.log(_.find(users, {'age': 1, 'active': true}));
 console.log(_.findLast([1, 2, 3, 4], function(n) {
     return n % 2 === 1;
 }));//3
+
+/**
+ * flatMap
+ */
+function duplicate(n) {
+    return [n, n];
+}
+console.log(_.flatMap([1, 2], duplicate));//[1, 1, 2, 2]
+
+/**
+ * flatMapDeep 返回新扁平化数组
+ */
+function duplicateDeep(n) {
+    return [[[n, n]]];
+}
+console.log(_.flatMapDeep([1, 2], duplicateDeep));//[1, 1, 2, 2]
+
+/**
+ * flatMapDepth 根据指定的 depth（递归深度）继续扁平化递归映射结果
+ */
+function duplicateDepth(n) {
+    return [[[n, n]]];
+}
+console.log(_.flatMapDepth([1, 2], duplicateDepth, 2));//[[1, 1], [2, 2]]
+
+/**
+ * forEach
+ */
+ _.forEach([1, 2], function(value) {
+    console.log(value);
+});
+_.forEach({'a': 1, 'b': 2}, function(value, key) {
+    console.log(key);
+});
+
+/**
+ * forEachRight
+ */
+_.forEachRight([1, 2], function(value) {
+    console.log(value);
+});
+
+/**
+ * groupBy
+ */
+console.log(_.groupBy([6.1, 4.2, 6.3], Math.floor));//{'4': [4.2], '6': [6.1, 6.3]}
+
+/**
+ * includes 
+ */
+console.log(_.includes([1, 2, 3], 1));
+console.log(_.includes([1, 2, 3], 1, 2));
+console.log(_.includes({'a': 1, 'b': 2}, 1));//true
+
+
+
+
