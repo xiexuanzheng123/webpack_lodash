@@ -45,3 +45,18 @@ console.log(_.sortedLastIndexBy(objects, {'x': 4}, function(o) {
  * sortedLastIndexOf 从后面查找元素的索引
  */
 console.log(_.sortedLastIndexOf([4, 5, 5, 5, 6], 5));
+
+/**
+ * sortedUniq针对已排序的数组去重
+ */
+console.log(_.sortedUniq([1, 1, 2, 2]));
+
+/**
+ * sortedUniqBy
+ */
+console.log(_.sortedUniqBy([1.1, 1.2, 2.1, 2.2], Math.floor));
+
+/**
+ * tail去掉首字母
+ */
+console.log(_.tail([1, 2, 3]));
