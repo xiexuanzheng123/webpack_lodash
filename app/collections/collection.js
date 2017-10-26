@@ -29,7 +29,7 @@ console.log(_.every(users, ['active', false]));//true
 console.log(_.every(users, 'active'));//fasle
 
 /**
- * filter
+ * filter遍历所有元素，返回由符合限制函数的元素组成的数组
  */
 var users = [
     { 'user': 'barney', 'age': 36, 'active': true }, 
@@ -38,4 +38,22 @@ var users = [
 console.log(_.filter(users, function(o) {return !o.active}));//[{ 'user': 'fred',   'age': 40, 'active': false }]
 console.log(_.filter(users, {'age': 36, 'active': true}));//[{ 'user': 'barney', 'age': 36, 'active': true }]
 console.log(_.filter(users, ['active', false]));//[{ 'user': 'fred',   'age': 40, 'active': false }]
-console.log(_.filter(users, active));//[{ 'user': 'barney', 'age': 36, 'active': true }]
+console.log(_.filter(users, 'active'));//[{ 'user': 'barney', 'age': 36, 'active': true }]
+
+/**
+ * find 返回第一个符合条件的元素
+ */
+var users = [
+    { 'user': 'barney',  'age': 36, 'active': true },
+    { 'user': 'fred',    'age': 40, 'active': false },  
+    { 'user': 'pebbles', 'age': 1,  'active': true }
+];
+console.log(_.find(users, function(o) {return o.age < 40}));//{ 'user': 'barney',  'age': 36, 'active': true }
+console.log(_.find(users, {'age': 1, 'active': true}));
+
+/**
+ * findLast
+ */
+console.log(_.findLast([1, 2, 3, 4], function(n) {
+    return n % 2 === 1;
+}));//3
