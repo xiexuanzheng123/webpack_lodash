@@ -42,3 +42,40 @@ var users = [
     { 'user': 'barney', 'age': 36 }
 ];
 console.log(_.orderBy(users, ['user', 'age'], ['asc', 'asc']));
+
+/**
+ * partition
+ */
+var users = [
+    { 'user': 'barney',  'age': 36, 'active': false },
+    { 'user': 'fred',    'age': 40, 'active': true },
+    { 'user': 'pebbles', 'age': 1,  'active': false }
+  ];
+var obj = _.partition(users, function(o) {
+    return o.active;
+});
+console.log(obj);
+var obj2 = _.partition(users, {'age': 1, 'active': false});
+console.log(obj2);
+
+/**
+ * reduce
+ */
+console.log(_.reduce([1, 2, 3], function(a, b) {
+    return a + b;
+}, 1));
+
+var obj = _.reduce({'a': 1, 'b': 2, 'c': 1}, function(result, value, key) {
+    (result[value] || (result[value] = [])).push(key);
+    return result;
+},{});
+console.log(obj);//['1': ['a', 'b'], '2': ['c']]
+
+/**
+ * reduceRight
+ */
+var arr = [[0, 1], [2, 3], [4, 5]];
+var obj = _.reduceRight(arr, function(arr1, arr2) {
+    return arr1.concat(arr2);
+},[]);
+console.log(obj);//[4, 5, 2, 3, 0, 1]
