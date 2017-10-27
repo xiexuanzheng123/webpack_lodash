@@ -115,7 +115,7 @@ console.log(rearged('b', 'c', 'a'));
 
 /**
  * rest（func，[start=func.length - 1]）
- * 创建一个函数，调用func
+ * 创建一个函数，调用func时，this绑定到创建的新函数，
  */
 var say = _.rest(function(what, names) {
     return what + ' ' + _.initial(names).join(', ') + (_.size(names) > 1 ? ', & ' : '') + _.last(names);
