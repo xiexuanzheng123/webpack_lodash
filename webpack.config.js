@@ -7,7 +7,7 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: {
         index: [
-            './app/array/array1'
+            './app/functions/function'
         ]
     },
     output: {
