@@ -79,3 +79,57 @@ var obj = _.reduceRight(arr, function(arr1, arr2) {
     return arr1.concat(arr2);
 },[]);
 console.log(obj);//[4, 5, 2, 3, 0, 1]
+
+/**
+ * reject filter的反方法
+ */
+var users = [
+    {'user': 'barney', 'age': 36, 'active': false},
+    {'user': 'fred', 'age': 40, 'active': true}
+];
+console.log(_.reject(users, function(o) {
+    return !o.active;
+}));
+
+/**
+ * sample 获取一个随机元素
+ */
+console.log(_.sample([1, 2, 3, 4]));
+
+/**
+ * sampleSize随机获取n个随机元素,没有顺序之分
+ */
+console.log(_.sampleSize([1, 2, 3], 2));
+
+/**
+ * shuffle 创建一个被打乱的集合
+ */
+console.log(_.shuffle([1, 2, 3, 4]));
+
+/**
+ * size字符串，数组，对象都可以
+ */
+console.log(_.size([1, 2, 3]));
+
+/**
+ * some集合是否包含限定函数
+ */
+console.log(_.some([null, 0, 'a', false], Boolean));
+var users = [
+    {'user': 'barney', 'active': true},
+    {'user': 'fred', 'active': false}
+];
+console.log(_.some(users, {'user': 'barney', 'active': false}));
+
+/**
+ * sortBy
+ */
+var users = [
+    {'user': 'fred', 'age': 48},
+    {'user': 'barney', 'age': 36},
+    {'user': 'fred', 'age': 40},
+    {'user': 'barney', 'age': 34}
+];
+console.log(_.sortBy(users, function(o) {
+    return o.user;
+}));
