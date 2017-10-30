@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /**
- * forIn
+ * forIn 遍历对象的自身和继承的可枚举属性
  */
 function Foo() {
     this.a = 1;
