@@ -18,3 +18,6 @@ promise.then(function() {
     console.log('Resolved.');
 });
 console.log('Hi');
+/**
+ * Promise实例具有then方法，then方法是定义在原型对象Promise.prototype上的
+ */
